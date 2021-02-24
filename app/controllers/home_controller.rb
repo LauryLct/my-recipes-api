@@ -3,7 +3,8 @@
 # app/controllers/refresh_controller.rb
 class HomeController < ApplicationController
   def home
-    @recipe = Recipe.all
-     render json: @recipe
+    @user = User.all
+
+    render json: @user
   end
 end

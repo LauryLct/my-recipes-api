@@ -16,14 +16,14 @@ module Api
       def create
         @recipe = current_user.recipes.build(recipe_params)
         if @recipe.save
-          render json: @recipe, status: :created, location: @recipe
+          render json: @recipe, status: :created
         else
           render json: @recipe.errors, status: :unprocessable_entity
         end
       end
 
       def show
-        render json: @recipe
+        render json: @recipe.name
       end
 
       def update
